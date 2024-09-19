@@ -95,8 +95,7 @@ public void testModificarExistenciasConBajoStock() {
     Objeto objeto = new Objeto(nombre, precio, cantidadEnStock, categoria);
     tienda.addObjeto(objeto);
 
-    // Simulate a situation where stock is updated
-    objeto.setCantidadEnStock(2); // Set to a low stock first
+    objeto.setCantidadEnStock(2);
     int resultado = tienda.modificarExistencias(objeto, 3);
     assertEquals(3, resultado);
 }
@@ -111,7 +110,6 @@ public void testModificarExistenciasConCantidadSuficiente() {
     Objeto objeto = new Objeto(nombre, precio, cantidadEnStock, categoria);
     tienda.addObjeto(objeto);
 
-    // Assume we have enough stock to modify
     objeto.setCantidadEnStock(10);
     int resultado = tienda.modificarExistencias(objeto, 7);
     assertEquals(7, resultado);
